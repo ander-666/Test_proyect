@@ -1,0 +1,912 @@
+[
+  {
+    "path": "scan.json",
+    "line": 5,
+    "match": "4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+    "pattern_id": "aws_secret_access_key",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "API Key",
+      "confidence": 0.8,
+      "reason": "Found in 'hashes' array, a common storage format for AWS secret access keys"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 44,
+    "match": "aZ9f+3J7bC4HkLmNopQrsTuvwxyZ0123456789ab",
+    "pattern_id": "aws_secret_access_key",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches 40-char token pattern, likely AWS secret access key"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 70,
+    "match": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "pattern_id": "aws_secret_access_key",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "Other",
+      "confidence": 0.0,
+      "reason": "Not a typical secret format, likely a placeholder"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 57,
+    "match": "xoxb-123456789012-ABCdefGHIjklMNopQRst",
+    "pattern_id": "slack_token_legacy",
+    "strength": "strong",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches 40-char token pattern, likely AWS secret or similar"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 31,
+    "match": "-----BEGIN PRIVATE KEY-----\\nMIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAK9b9r9KByFakeFake\\nnJ3mN4sH2f3v6e7u9o6p3q2r1s0t9u8v7w6x5y4z3a2b1c0d9e8f7g6h5i4j3k2l\\nabCdEfGhIjKlMnOpQrStUvWxYz1234567890ABCDEFGHIJKLMNOPQRSTUVWX\\nL+Oq1r2s3t4u5v6w7x8y9z0a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5\\n-----END PRIVATE KEY-----",
+    "pattern_id": "private_key_block_pem",
+    "strength": "strong",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.99,
+      "reason": "matches private key block with strong encryption"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 18,
+    "match": "eyJhbGciOiJIUzI1NiJ9.invalid_payload.invalid_sig",
+    "pattern_id": "jwt",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches typical JWT secret format and placement"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 83,
+    "match": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.cGF5bG9hZA.1q2w3e4r5t6y7u8i9o0p",
+    "pattern_id": "jwt",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches JWT pattern with medium strength"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 5,
+    "match": "4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "URL",
+      "confidence": 0.0,
+      "reason": "Found in 'path' attribute, a common URL format"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 18,
+    "match": "eyJhbGciOiJIUzI1NiJ9",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches typical JWT secret format"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 31,
+    "match": "nMIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAK9b9r9KByFakeFake",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.9,
+      "reason": "Matches typical private key format and placement"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 31,
+    "match": "nnJ3mN4sH2f3v6e7u9o6p3q2r1s0t9u8v7w6x5y4z3a2b1c0d9e8f7g6h5i4j3k2l",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.9,
+      "reason": "matches private key format and contains a long base64-encoded key"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 31,
+    "match": "nabCdEfGhIjKlMnOpQrStUvWxYz1234567890ABCDEFGHIJKLMNOPQRSTUVWX",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.99,
+      "reason": "matches private key format"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 31,
+    "match": "nL+Oq1r2s3t4u5v6w7x8y9z0a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.99,
+      "reason": "matches private key format"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 42,
+    "match": "backend/settings",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.99,
+      "reason": "matches token block with high confidence"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 44,
+    "match": "aZ9f+3J7bC4HkLmNopQrsTuvwxyZ0123456789ab",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches 40-char token pattern, likely AWS secret access key"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 55,
+    "match": "backend/settings",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "URL",
+      "confidence": 0.0,
+      "reason": "Matches URL pattern, likely a Slack token"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 57,
+    "match": "ABCdefGHIjklMNopQRst",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches 40-char token pattern, likely AWS secret or similar"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 70,
+    "match": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "Other",
+      "confidence": 0.0,
+      "reason": "Not a typical secret format, likely a placeholder"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 83,
+    "match": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches JWT pattern with medium strength"
+    }
+  },
+  {
+    "path": "scan.json",
+    "line": 83,
+    "match": "1q2w3e4r5t6y7u8i9o0p",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches JWT pattern with medium strength"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 42,
+    "match": "4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+    "pattern_id": "aws_secret_access_key",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "API Key",
+      "confidence": 0.8,
+      "reason": "matches known secret access key format"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 90,
+    "match": "aZ9f+3J7bC4HkLmNopQrsTuvwxyZ0123456789ab",
+    "pattern_id": "aws_secret_access_key",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "API Key",
+      "confidence": 0.8,
+      "reason": "matches typical AWS secret access key format"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 66,
+    "match": "-----BEGIN PRIVATE KEY-----\\nMIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAK9b9r9KByFakeFake\\nnJ3mN4sH2f3v6e7u9o6p3q2r1s0t9u8v7w6x5y4z3a2b1c0d9e8f7g6h5i4j3k2l\\nabCdEfGhIjKlMnOpQrStUvWxYz1234567890ABCDEFGHIJKLMNOPQRSTUVWX\\nL+Oq1r2s3t4u5v6w7x8y9z0a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5\\n-----END PRIVATE KEY-----",
+    "pattern_id": "private_key_block_pem",
+    "strength": "strong",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.99,
+      "reason": "matches private key format"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 114,
+    "match": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.cGF5bG9hZA.1q2w3e4r5t6y7u8i9o0p",
+    "pattern_id": "jwt",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "matches known JWT format"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 31,
+    "match": "physicalLocation",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "API Key",
+      "confidence": 0.8,
+      "reason": "Found in 'hashes' array, a common storage for AWS credentials"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 42,
+    "match": "4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "API Key",
+      "confidence": 0.8,
+      "reason": "base64 encoded string matches API key format"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 55,
+    "match": "physicalLocation",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.9,
+      "reason": "matches private key block with strong encryption"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 66,
+    "match": "nMIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAK9b9r9KByFakeFake",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.9,
+      "reason": "Base64 encoded private key format"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 66,
+    "match": "nnJ3mN4sH2f3v6e7u9o6p3q2r1s0t9u8v7w6x5y4z3a2b1c0d9e8f7g6h5i4j3k2l",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.9,
+      "reason": "matches private key format with base64 encoding"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 66,
+    "match": "nabCdEfGhIjKlMnOpQrStUvWxYz1234567890ABCDEFGHIJKLMNOPQRSTUVWX",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.99,
+      "reason": "matches private key format"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 66,
+    "match": "nL+Oq1r2s3t4u5v6w7x8y9z0a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.99,
+      "reason": "matches private key format"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 79,
+    "match": "physicalLocation",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches 40-char token pattern, likely AWS secret or similar"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 81,
+    "match": "backend/settings",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.9,
+      "reason": "matches 40-char token pattern, likely AWS secret or similar"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 90,
+    "match": "aZ9f+3J7bC4HkLmNopQrsTuvwxyZ0123456789ab",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Secret Access Key",
+      "confidence": 0.8,
+      "reason": "matches base64 encoded string format"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 103,
+    "match": "physicalLocation",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches JWT pattern with medium strength"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 114,
+    "match": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Base64 encoded JWT token"
+    }
+  },
+  {
+    "path": "scan.sarif",
+    "line": 114,
+    "match": "1q2w3e4r5t6y7u8i9o0p",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "matches base64 encoded JWT token format"
+    }
+  },
+  {
+    "path": "data/sample.json",
+    "line": 14,
+    "match": "4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+    "pattern_id": "aws_secret_access_key",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "API Key",
+      "confidence": 0.8,
+      "reason": "Found in 'hashes' array, a common storage for AWS credentials"
+    }
+  },
+  {
+    "path": "data/sample.json",
+    "line": 14,
+    "match": "4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "API Key",
+      "confidence": 0.8,
+      "reason": "Found in hashes section, commonly used for authentication"
+    }
+  },
+  {
+    "path": "frontend/src/index.js",
+    "line": 3,
+    "match": "eyJhbGciOiJIUzI1NiJ9.invalid_payload.invalid_sig",
+    "pattern_id": "jwt",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "Other",
+      "confidence": 0.0,
+      "reason": "Does not match typical secret formats and placements"
+    }
+  },
+  {
+    "path": "frontend/src/index.js",
+    "line": 3,
+    "match": "eyJhbGciOiJIUzI1NiJ9",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "Other",
+      "confidence": 0.0,
+      "reason": "Does not match expected base64 format"
+    }
+  },
+  {
+    "path": "frontend/src/config.js",
+    "line": 5,
+    "match": "https://public:private@o0.ingest.sentry.io",
+    "pattern_id": "url_basic_auth",
+    "strength": "strong",
+    "llm": {
+      "is_secret": false,
+      "type": "URL",
+      "confidence": 0.0,
+      "reason": "matches a public URL pattern"
+    }
+  },
+  {
+    "path": "frontend/src/config.js",
+    "line": 3,
+    "match": "styles/user/ckabcd1234567890efghij",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "URL",
+      "confidence": 0.8,
+      "reason": "map style id is publicly accessible and not strongly encrypted"
+    }
+  },
+  {
+    "path": "certs/private_key.pem",
+    "line": 1,
+    "match": "-----BEGIN PRIVATE KEY-----\nMIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAK9b9r9KByFakeFake\nnJ3mN4sH2f3v6e7u9o6p3q2r1s0t9u8v7w6x5y4z3a2b1c0d9e8f7g6h5i4j3k2l\nabCdEfGhIjKlMnOpQrStUvWxYz1234567890ABCDEFGHIJKLMNOPQRSTUVWX\nL+Oq1r2s3t4u5v6w7x8y9z0a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5\n-----END PRIVATE KEY-----",
+    "pattern_id": "private_key_block_pem",
+    "strength": "strong",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.99,
+      "reason": "matches private key block format with strong encryption"
+    }
+  },
+  {
+    "path": "certs/private_key.pem",
+    "line": 2,
+    "match": "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAK9b9r9KByFakeFake",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.9,
+      "reason": "Base64 encoded private key with typical RSA padding"
+    }
+  },
+  {
+    "path": "certs/private_key.pem",
+    "line": 3,
+    "match": "nJ3mN4sH2f3v6e7u9o6p3q2r1s0t9u8v7w6x5y4z3a2b1c0d9e8f7g6h5i4j3k2l",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.9,
+      "reason": "base64 encoding and key format consistent with private key"
+    }
+  },
+  {
+    "path": "certs/private_key.pem",
+    "line": 4,
+    "match": "abCdEfGhIjKlMnOpQrStUvWxYz1234567890ABCDEFGHIJKLMNOPQRSTUVWX",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.8,
+      "reason": "base64 encoding and PEM format indicate private key"
+    }
+  },
+  {
+    "path": "certs/private_key.pem",
+    "line": 5,
+    "match": "L+Oq1r2s3t4u5v6w7x8y9z0a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.8,
+      "reason": "base64 encoding and key format consistent with private key"
+    }
+  },
+  {
+    "path": "certs/public_key.pub",
+    "line": 1,
+    "match": "AAAAC3NzaC1lZDI1NTE5AAAAIKlL+fakefakefakefakefakefake",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Private Key",
+      "confidence": 0.8,
+      "reason": "matches private key format with ed25519 fingerprint"
+    }
+  },
+  {
+    "path": "backend/.env",
+    "line": 4,
+    "match": "sk_live_51Q2hZBqwertyuiopasdfghjklzxcvbnm12345",
+    "pattern_id": "stripe_secret_key",
+    "strength": "strong",
+    "llm": {
+      "is_secret": true,
+      "type": "API Key",
+      "confidence": 0.9,
+      "reason": "High-entropy string with Stripe key format"
+    }
+  },
+  {
+    "path": "backend/.env",
+    "line": 5,
+    "match": "pk_live_51Q2hZBqwertyuiopasdfghjklzxcvbnm12345",
+    "pattern_id": "stripe_public_key",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "API Key",
+      "confidence": 0.8,
+      "reason": "High-entropy string with Stripe key format"
+    }
+  },
+  {
+    "path": "backend/.env",
+    "line": 7,
+    "match": "postgres://svc_user:SuperS3cret!@db.local:5432",
+    "pattern_id": "url_basic_auth",
+    "strength": "strong",
+    "llm": {
+      "is_secret": true,
+      "type": "URL",
+      "confidence": 0.9,
+      "reason": "Embedded credentials in URL pattern"
+    }
+  },
+  {
+    "path": "backend/.env",
+    "line": 7,
+    "match": "postgres://svc_user:SuperS3cret!@db.local:5432/app",
+    "pattern_id": "postgres_conn",
+    "strength": "strong",
+    "llm": {
+      "is_secret": true,
+      "type": "URL",
+      "confidence": 0.9,
+      "reason": "Embedded credentials in URL"
+    }
+  },
+  {
+    "path": "backend/.env",
+    "line": 4,
+    "match": "STRIPE_SECRET_KEY=sk_live_51Q2hZBqwertyuiopasdfghjklzxcvbnm12345",
+    "pattern_id": "generic_token_var",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "API Key",
+      "confidence": 0.8,
+      "reason": "High-entropy string with Stripe key format"
+    }
+  },
+  {
+    "path": "infra/docker-compose.yml",
+    "line": 7,
+    "match": "POSTGRES_PASSWORD: SuperS3cret!",
+    "pattern_id": "generic_password_var",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Password",
+      "confidence": 0.9,
+      "reason": "Contains strong password format with special characters"
+    }
+  },
+  {
+    "path": "backend/settings.py",
+    "line": 5,
+    "match": "aZ9f+3J7bC4HkLmNopQrsTuvwxyZ0123456789ab",
+    "pattern_id": "aws_secret_access_key",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches 40-char token pattern, likely AWS secret or similar"
+    }
+  },
+  {
+    "path": "backend/settings.py",
+    "line": 11,
+    "match": "xoxb-123456789012-ABCdefGHIjklMNopQRst",
+    "pattern_id": "slack_token_legacy",
+    "strength": "strong",
+    "llm": {
+      "is_secret": false,
+      "type": "Other",
+      "confidence": 0.0,
+      "reason": "Not a typical secret format, likely a placeholder or fake token"
+    }
+  },
+  {
+    "path": "backend/settings.py",
+    "line": 2,
+    "match": "AKIAEXAMPLEKEY12345678",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "API Key",
+      "confidence": 0.9,
+      "reason": "Matches AWS Access Key pattern"
+    }
+  },
+  {
+    "path": "backend/settings.py",
+    "line": 5,
+    "match": "aZ9f+3J7bC4HkLmNopQrsTuvwxyZ0123456789ab",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches 40-char token format, common for AWS secret access keys"
+    }
+  },
+  {
+    "path": "backend/settings.py",
+    "line": 11,
+    "match": "ABCdefGHIjklMNopQRst",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "URL",
+      "confidence": 0.8,
+      "reason": "matches Slack token pattern, but context suggests fake token"
+    }
+  },
+  {
+    "path": "backend/app.py",
+    "line": 13,
+    "match": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "pattern_id": "aws_secret_access_key",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "Checksum/Commit Hash",
+      "confidence": 0.0,
+      "reason": "Not a secret, likely a commit hash"
+    }
+  },
+  {
+    "path": "backend/app.py",
+    "line": 7,
+    "match": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.cGF5bG9hZA.1q2w3e4r5t6y7u8i9o0p",
+    "pattern_id": "jwt",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches JWT pattern with medium strength"
+    }
+  },
+  {
+    "path": "backend/app.py",
+    "line": 7,
+    "match": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "Unknown",
+      "confidence": 0.0,
+      "reason": "LLM parse error"
+    }
+  },
+  {
+    "path": "backend/app.py",
+    "line": 7,
+    "match": "1q2w3e4r5t6y7u8i9o0p",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Matches a JWT pattern, but context suggests it may be a JWT placeholder"
+    }
+  },
+  {
+    "path": "backend/app.py",
+    "line": 10,
+    "match": "c3ZjX3VzZXI6U3VwZXJTM2NyZXQh",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Password",
+      "confidence": 0.8,
+      "reason": "base64 encoding of 'svc_user:SuperS3cret!' matches common auth pattern"
+    }
+  },
+  {
+    "path": "backend/app.py",
+    "line": 13,
+    "match": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "Checksum/Commit Hash",
+      "confidence": 0.0,
+      "reason": "Not a secret, likely a commit hash"
+    }
+  },
+  {
+    "path": "mobile/ios/Info.plist",
+    "line": 6,
+    "match": "NSCameraUsageDescription",
+    "pattern_id": "google_oauth_client_secret",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "Token",
+      "confidence": 0.8,
+      "reason": "Context suggests a description for camera usage, which is not typical for secret storage"
+    }
+  },
+  {
+    "path": "mobile/ios/Info.plist",
+    "line": 2,
+    "match": "com/DTDs/PropertyList",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "URL",
+      "confidence": 0.8,
+      "reason": "contains 'http' protocol"
+    }
+  },
+  {
+    "path": "mobile/ios/Info.plist",
+    "line": 6,
+    "match": "NSCameraUsageDescription",
+    "pattern_id": "base64_basic_auth_like",
+    "strength": "medium",
+    "llm": {
+      "is_secret": true,
+      "type": "URL",
+      "confidence": 0.8,
+      "reason": "contains a description of camera usage, suggesting a potential API key or token"
+    }
+  },
+  {
+    "path": "mobile/android/gradle.properties",
+    "line": 3,
+    "match": "3f2504e0-4f89-11d3-9a0c-",
+    "pattern_id": "google_oauth_client_secret",
+    "strength": "medium",
+    "llm": {
+      "is_secret": false,
+      "type": "URL",
+      "confidence": 0.0,
+      "reason": "matches a known analytics ID format"
+    }
+  }
+]
