@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: svc_user
+      POSTGRES_PASSWORD: Sup3rS3cret!
+    ports:
+      - "5432:5432"
+  web:
+    build: ../backend
+    environment:
+      STRIPE_PUBLIC_KEY: "pk_live_51Q2hZBabcdefghijklmNOPQRSTUvwx987654"
